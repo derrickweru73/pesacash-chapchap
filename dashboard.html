@@ -6,15 +6,6 @@
     <title>QuickCash Lending Dashboard</title>
             <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
              
-    <style>
-        /* By default, hide the loan form page */
-        #loan-form-page { display: none; }
-        #dashboard-page { display: flex; }
-
-        /* When the URL ends in #loan-form-page, swap the views */
-        #loan-form-page:target { display: flex; }
-        #loan-form-page:target ~ #dashboard-page { display: none; }
-    </style>
 
 </head>
 <body class="h-full text-slate-800 antialiased font-sans">
@@ -36,8 +27,8 @@
                      
                     <span>Overview</span>
                 </a>
-                <a href="#loan-form-page" class="flex items-center space-x-3 px-4 py-2.5 rounded-lg hover:bg-slate-800 hover:text-white-400 transition-colors">
-                     <span>💰</span>
+                <a href="#loan.html-page" class="flex items-center space-x-3 px-4 py-2.5 rounded-lg hover:bg-slate-800 hover:text-white-400 transition-colors">
+                     <span></span>
                     <span>Apply for Loan</span>
                 </a>
             </nav>
@@ -49,60 +40,10 @@
         <!-- TOP APP BAR -->
             <header class="bg-white-900 border-b border-slate-200 px-6 py-4 flex items-center justify-between shadow-sm shrink-0">
                 <div class="text-sm font-medium text-white-600">Account:Holder </div>
-                <div class="h-8 w-8 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-sm">AM</div>
+                <div class="h-8 w-8 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-sm">Name</div>
             </header>
 
-           <!-- VIEW 1: LOAN APPLICATION FORM  -->
-            <main id="loan-form-page" class="flex-col p-6 md:p-10 max-w-3xl w-full mx-auto space-y-6">
-                <!-- Return Button Block -->
-                <div>
-                    <a href="#" class="inline-flex items-center gap-x-2 text-sm font-semibold text-slate-600 hover:text-emerald-600 transition-colors">
-                        ⬅ Return to Dashboard
-                    </a>
-                </div>
-
-            <!-- Form Header -->
-                <div class="border-b border-slate-200 pb-4">
-                    <h1 class="text-2xl font-bold text-slate-900">Apply for a New Loan</h1>
-                    <p class="text-sm text-slate-500 mt-1">Provide your application details below for credit verification.</p>
-                </div>
-
-              <!-- Application Form -->
-                <form action="#" method="POST" class="bg-blue-700 border border-slate-200 rounded-xl p-6 shadow-sm space-y-6">
-                    <div>
-                        <label for="amount" class="block text-sm font-medium text-slate-700">Requested Loan Amount (KES)</label>
-                        <input type="number" id="amount" name="amount" required placeholder="e.g. 20000" class="mt-1 block w-full rounded-lg border border-slate-300 
-                        px-3 py-2 shadow-sm focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500 sm:text-sm">
-                    </div>
-
-                    <div>
-                        <label for="duration" class="block text-sm font-medium text-slate-700">Repayment Duration</label>
-                        <select id="duration" name="duration" class="mt-1 block w-full rounded-lg border border-slate-300 px-3 py-2 shadow-sm focus:border-emerald-500 
-                        focus:outline-none focus:ring-1 focus:ring-emerald-500 sm:text-sm">
-                            <option>1 Month (Interest: 5%)</option>
-                            <option>3 Months (Interest: 12%)</option>
-                            <option>6 Months (Interest: 18%)</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label for="reason" class="block text-sm font-medium text-slate-700">Purpose of Funds</label>
-                        <textarea id="reason" name="reason" rows="3" required placeholder="Describe the reason for your application..." class="mt-1 block w-full rounded-lg border 
-                        border-slate-300 px-3 py-2 shadow-sm focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500 sm:text-sm"></textarea>
-                    </div>
-
-                 <!-- Action Buttons -->
-                    <div class="pt-4 flex justify-end gap-x-3 border-t border-slate-100">
-                        <a href="#" class="rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm hover:bg-slate-50 
-                        transition-colors flex items-center">
-                            Cancel
-                        </a>
-                        <button type="submit" class="rounded-lg bg-emerald-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-emerald-500 transition-colors">
-                            Submit Application
-                        </button>
-                    </div>
-                </form>
-            </main>
+            
 
             <!-- VIEW 2: MAIN DASHBOARD OVERVIEW -->
             <main id="dashboard-page" class="flex-col p-6 md:p-10 max-w-7xl w-full mx-auto space-y-8">
@@ -113,9 +54,11 @@
                         <p class="text-sm text-slate-500 mt-1">Track your loans and limits in real-time.</p>
                     </div>
                     <div>
-                        <a href="#loan-form-page" class="inline-flex items-center justify-center rounded-lg bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-emerald-500 transition-colors">
+                         <a href="loan.html">
+                           <button class="bg-green-400 text-white px-6 py-3 rounded-lg hover:bg-green-500">
                              Request New Loan
-                        </a>
+                     </button>
+                     </a>
                     </div>
                 </div>
 
